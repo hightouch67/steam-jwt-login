@@ -1,0 +1,19 @@
+{
+  "name": "steam-jwt-login",
+  "version": "1.0.0",
+  "description": "Example of Steam Login with JWT",
+  "author": "Federico Babrauskas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "passport": "^0.4.0",
+    "passport-steam": "^1.0.10"
+  }
+}

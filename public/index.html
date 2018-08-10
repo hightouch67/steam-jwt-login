@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Steam JWT Login</title>
+  </head>
+  <body>
+    <h1>Steam JWT Login</h1>
+    <img id="loginImg" src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png" alt="Login with Steam">
+
+    <script type="text/javascript">
+      var loginBtn = document.getElementById('loginImg');
+
+      loginBtn.addEventListener('click', function() {
+        var loginWindow = window.open('/auth/steam', '_blank', 'width=800, height=600');
+        if (window.focus) {
+          loginWindow.focus();
+        }
+      });
+
+      function steamCallback(data) {
+        console.log(data);
+      }
+    </script>
+  </body>
+</html>
