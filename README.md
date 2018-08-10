@@ -1,5 +1,10 @@
-### Steam JWT Login
+# Steam JWT Login
+Quick example of Steam Login using JWT tokens.
 
-Steam Login using Passport.js (passport-steam) and JWT (jsonwebtoken)
+## Dependencies
+- passport
+- passport-steam
+- jsonwebtoken
 
-Install dependencies using ```npm install```
+## Run example
+To run the project, clone the repo and install dependencies using ```npm install```.
