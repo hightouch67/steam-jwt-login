@@ -1,7 +1,6 @@
 
 var steam   = require('./index');
 const express = require('express')
-const express = require('express-session')
 const app = express()
 const port = process.env.PORT || 4000
 
