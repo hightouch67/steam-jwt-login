@@ -69,6 +69,7 @@ var SteamStrategy = new OpenIDStrategy({
         // Your database probably has its own asynchronous callback, so we're
         // faking that with nextTick() for demonstration.
         process.nextTick(function () {
+            console.log(identifier)
             // Retrieve user from Firebase and return it via done().
             var user = {
                 identifier: identifier,
