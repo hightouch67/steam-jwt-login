@@ -95,6 +95,32 @@ var session = require('express-session');
 
 // ```
 // 
+// By default, `express-session` uses an in-memory database that isn't
+// suitable for production.  We're going to tell `express-session` to use
+// Firebase instead, so we're going to wrap the session package with
+// a Firebase session interface using the package `connect-firebase`.
+// 
+// ```js
+
+var FirebaseStore = require('connect-firebase')(session);
+
+// ```
+// 
+// Now we've got a session manager that can use Firebase databases.
+// We need to configure this manager to speak to a particular Firebase
+// database that we control.
+// 
+// You'll need to find and/or create a Firebase token to replace
+// `YOURFIREBASETOKEN`, below.  At firebase.com, click "manage app" for your
+// FireBase app.  Click "Secret" in the sidebar to reveal your token(s).  Either
+// insert your existing token below or create a new one.
+// 
+// ```js
+
+
+
+// ```
+// 
 // Lastly, configure this session manager and tell our Express server to
 // use it.  We're going to pass a few options as we finally initialize our
 // session manager.
@@ -179,8 +205,8 @@ var SteamStrategy = new OpenIDStrategy({
         providerURL: 'http://steamcommunity.com/openid',
         stateless: true,
         // How the OpenID provider should return the client to us
-        returnURL: '/auth/openid/return',
-        realm: '/',
+        returnURL: 'https://ongamelogin.herokuapp.com/auth/openid/return',
+        realm: 'https://localhost:4000/',
     },
     // This is the "validate" callback, which returns whatever object you think
     // should represent your user when OpenID authentication succeeds.  You
@@ -313,7 +339,7 @@ app.post('/auth/openid', passport.authenticate('openid'));
 app.get('/auth/openid/return', passport.authenticate('openid'),
     function(request, response) {
         if (request.user) {
-            response.redirect('http://localhost:3000/steamlogin/?steamid=' + request.user.steamId);
+            response.redirect('/?steamid=' + request.user.steamId);
         } else {
             response.redirect('/?failed');
         }
