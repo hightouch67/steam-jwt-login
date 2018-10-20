@@ -27,7 +27,7 @@ app.get('/authenticate', steam.authenticate(), function(req, res) {
 app.get('/verify', steam.verify(), function(req, res) {
 
 	console.log(req.user._json.steamid)
-	res.redirect('https://ongame.io/steamlogin/'+req.user._json.steamid);
+	res.redirect('https://ongame.io/#!/steamlogin/id='+req.user._json.steamid);
 	// res.send(req.user).end();
 });
 
