@@ -13,9 +13,9 @@ passport.deserializeUser((obj, done) => {
 });
 
 passport.use(new SteamStrategy({
-    returnURL: 'http://localhost:3000/auth/steam/return',
-    realm: 'http://localhost:3000/',
-    apiKey: 'Steam Api Key'
+    returnURL: 'https://ongamelogin.herokuapp.com/auth/steam/return',
+    realm: 'https://ongamelogin.herokuapp.com/',
+    apiKey: 'B3942C1CD7D1B4E06FAEE6BE192E97BE'
   },
   (identifier, profile, done) => {
     process.nextTick(function () {
@@ -49,6 +49,7 @@ app.get('/auth/steam/return', passport.authenticate('steam', { failureRedirect: 
       window.close();
     </script>
   `)
+  // res.redirect('http://localhost:3000/');
 });
 
-app.listen(3000);
+app.listen(8000);
