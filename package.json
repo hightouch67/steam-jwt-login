@@ -1,21 +1,27 @@
 {
-  "name": "steam-jwt-login",
-  "version": "1.0.0",
-  "description": "Example of Steam Login with JWT",
-  "author": "",
-  "main": "index.js",
+  "name": "steam-login",
+  "description": "Simple Connect / Express Steam authentication library.",
+  "author": "Andrew Rogers <anrogers529@gmail.com>",
+  "version": "0.1.7",
+  "keywords": [
+    "authentication",
+    "login",
+    "steam",
+    "user"
+  ],
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [],
-  "license": "ISC",
+  "repository": "cpancake/steam-login",
+  "license": "MIT",
+  "homepage": "http://github.com/cpancake/steam-login",
   "dependencies": {
-    "connect-firebase": "0.0.9",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "firebase": "^5.5.5",
-    "jsonwebtoken": "^8.3.0",
-    "passport": "^0.4.0",
-    "passport-steam": "^1.0.10"
+    "openid": "^2.0.6",
+    "express": "^4.12.2",
+    "bluebird": "^2.9.13",
+    "request-promise": "^0.4.0"
+  },
+  "devDependencies": {
+    "express-session": "^1.10.3"
   }
 }
