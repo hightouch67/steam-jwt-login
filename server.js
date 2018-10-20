@@ -25,7 +25,10 @@ app.get('/authenticate', steam.authenticate(), function(req, res) {
 });
 
 app.get('/verify', steam.verify(), function(req, res) {
-	res.send(req.user).end();
+
+	console.log(req.user._json.steamid)
+	res.redirect('https://ongame.io/steamlogin/'+req.user._json.steamid);
+	// res.send(req.user).end();
 });
 
 app.get('/logout', steam.enforceLogin('/'), function(req, res) {
