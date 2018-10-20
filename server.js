@@ -56,7 +56,7 @@ var SteamStrategy = new OpenIDStrategy({
         providerURL: 'http://steamcommunity.com/openid',
         stateless: true,
         // How the OpenID provider should return the client to us
-        returnURL: 'https://ongamelogin.herokuapp.com/auth/openid/return',
+        returnURL: 'https://localhost:4000/auth/openid/return',
         realm: 'https://localhost:4000',
     },
     // This is the "validate" callback, which returns whatever object you think
