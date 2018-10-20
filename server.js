@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000
 app.use(require('express-session')({ resave: false, saveUninitialized: false, secret: 'a secret' }));
 
 app.use(steam.middleware({
-	realm: 'https://ongamelogin.herokuapp.com:4000/', 
+	realm: 'https://ongamelogin.herokuapp.com/', 
 	verify: 'https://ongamelogin.herokuapp.com/verify',
 	apiKey: '38299D91CB09AE690BC887478B2D2A52'}
 ));
