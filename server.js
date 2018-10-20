@@ -179,8 +179,8 @@ var SteamStrategy = new OpenIDStrategy({
         providerURL: 'http://steamcommunity.com/openid',
         stateless: true,
         // How the OpenID provider should return the client to us
-        returnURL: 'http://localhost:4000/auth/openid/return',
-        realm: 'http://localhost:4000/',
+        returnURL: '/auth/openid/return',
+        realm: '/',
     },
     // This is the "validate" callback, which returns whatever object you think
     // should represent your user when OpenID authentication succeeds.  You
