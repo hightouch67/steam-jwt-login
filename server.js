@@ -12,7 +12,7 @@ app.use(require('express-session')({ resave: false, saveUninitialized: false, se
 app.use(steam.middleware({
 	realm: 'https://ongamelogin.herokuapp.com:4000/', 
 	verify: 'https://ongamelogin.herokuapp.com:4000/verify',
-	apiKey: 'B3942C1CD7D1B4E06FAEE6BE192E97BE'}
+	apiKey: '38299D91CB09AE690BC887478B2D2A52'}
 ));
 
 app.get('/', function(req, res) {
