@@ -1,10 +1,10 @@
 var express = require('express'),
     steam   = require('./index');
-
-var app = express();
+const express = require('express')
+const app = express()
 const port = process.env.PORT || 4000
 
-app.listen(port, () => console.log(`Listening on ${port}`));
+
 
 
 app.use(require('express-session')({ resave: false, saveUninitialized: false, secret: 'a secret' }));
@@ -15,6 +15,7 @@ app.use(steam.middleware({
 	apiKey: '38299D91CB09AE690BC887478B2D2A52'}
 ));
 
+app.listen(port, () => console.log(`Listening on ${port}`));
 app.get('/', function(req, res) {
 	res.send(req.user == null ? 'not logged in' : 'hello ' + req.user.username).end();
 });
