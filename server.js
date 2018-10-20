@@ -1,5 +1,5 @@
-var express = require('express'),
-    steam   = require('./index');
+
+var steam   = require('./index');
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000
