@@ -119,3 +119,12 @@ function logout(req)
 		req.user = null;
 	}
 }
+
+module.exports.liveLogin = function()
+{
+	return function(req, res, next) {
+		console.log(req.query);
+		// console.log(req)
+		return next('Authentication failed.');
+	};
+}

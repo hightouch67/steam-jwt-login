@@ -12,7 +12,7 @@ app.use(require('express-session')({ resave: false, saveUninitialized: false, se
 app.use(steam.middleware({
 	realm: 'https://ongamelogin.herokuapp.com/', 
 	verify: 'https://ongamelogin.herokuapp.com/verify',
-	apiKey: '38299D91CB09AE690BC887478B2D2A52'}
+	apiKey: 'EFC19234FBBF9E8D23E2C2E6BD59B444'}
 ));
 
 app.listen(port, () => console.log(`Listening on ${port}`));
@@ -29,6 +29,23 @@ app.get('/verify', steam.verify(), function(req, res) {
 	console.log(req.user._json.steamid)
 	res.redirect('https://ongame.io/#!/steamlogin/id='+req.user._json.steamid);
 	// res.send(req.user).end();
+});
+
+
+app.get('/livelogin/:param' , function(req, res) {
+	console.log(this.location)
+	console.log(req.params);
+	//res.redirect('https://ongame.io/#!/steamlogin/id='+req.user._json.steamid);
+	// res.send(req.user).end();
+    //Given the request "/592363122?foo=bar&hello=world"
+    //the below would log out 
+    // {
+    //   some_id: 592363122,
+    //   foo: 'bar',
+    //   hello: 'world'
+    // }
+
+    //return res.json(this);
 });
 
 app.get('/logout', steam.enforceLogin('/'), function(req, res) {
